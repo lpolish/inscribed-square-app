@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "增强型内接正方形查找器",
+    "description": "一个交互式几何工具，用于探索闭合曲线中的内接正方形"
+  },
+  "HomePage": {
+    "title": "增强型内接正方形查找器",
+    "description": "探索闭合曲线中内接正方形的迷人世界",
+    "tools": {
+      "title": "绘图工具",
+      "freehand": "自由绘制",
+      "line": "直线",
+      "circle": "圆形",
+      "rectangle": "矩形",
+      "polygon": "多边形",
+      "triangle": "三角形",
+      "square": "正方形",
+      "pentagon": "五边形",
+      "hexagon": "六边形",
+      "heptagon": "七边形",
+      "octagon": "八边形",
+      "nonagon": "九边形",
+      "decagon": "十边形",
+      "descriptions": {
+        "freehand": "自由绘制",
+        "line": "绘制直线",
+        "circle": "创建完美圆形",
+        "rectangle": "绘制矩形或正方形",
+        "polygon": "创建正多边形"
+      },
+      "polygonEdges": "边数：{count}"
+    },
+    "buttons": {
+      "findInscribed": "查找内接正方形",
+      "findExtended": "查找外接正方形",
+      "clear": "清除"
+    },
+    "labels": {
+      "showGrid": "显示网格"
+    },
+    "creator": {
+      "name": "路易斯",
+      "role": "网页开发者",
+      "location": "墨西哥"
+    },
+    "footer": {
+      "title": "关于本项目",
+      "content": "一个结合几何学和创造力的交互式工具。",
+      "techStack": "使用高级数学和网络技术构建",
+      "creator": "由墨西哥网页开发者路易斯创建",
+      "sourceCode": "查看源代码"
+    }
+  },
+  "mathData": {
+    "title": "数学数据",
+    "curveLength": "曲线长度",
+    "curveArea": "曲线面积",
+    "centroid": "质心",
+    "boundingBox": "边界框",
+    "min": "最小值",
+    "max": "最大值",
+    "noData": "无可用曲线数据",
+    "squareType": "正方形类型",
+    "inscribed": "内接",
+    "extended": "外接",
+    "squareArea": "正方形面积",
+    "formula": {
+      "title": "面积计算公式",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "其中 (xi, yi) 是第i个顶点的坐标"
+    }
+  },
+  "about": {
+    "title": "关于内接正方形查找器",
+    "introduction": {
+      "title": "介绍",
+      "paragraph1": "欢迎使用内接正方形查找器，这是一个探索几何学和数学猜想迷人世界的交互式工具。",
+      "paragraph2": "这个应用程序允许你绘制闭合曲线并在其中发现内接正方形，为一个世纪以来的数学问题带来生动的体验。"
+    },
+    "keyConcepts": {
+      "title": "关键概念",
+      "closedCurves": {
+        "title": "闭合曲线",
+        "description": "闭合曲线是平面上的连续环，如圆或任何起点和终点相同的形状。"
+      },
+      "inscribedSquares": {
+        "title": "内接正方形",
+        "description": "内接正方形是完全适合闭合曲线内部的正方形，其四个角都接触曲线。"
+      },
+      "extendedSquares": {
+        "title": "外接正方形",
+        "description": "外接正方形是完全包围闭合曲线的最小正方形。"
+      },
+      "areaCalculation": {
+        "title": "面积计算",
+        "description": "曲线和正方形的面积使用高级几何算法计算。"
+      },
+      "curveLength": {
+        "title": "曲线长度",
+        "description": "曲线周围的总距离，以千像素为单位测量。"
+      }
+    },
+    "mathFoundations": {
+      "title": "数学基础",
+      "shoelace": {
+        "title": "鞋带公式",
+        "description": "我们使用鞋带公式（也称为测量员公式）来计算曲线形成的多边形面积：",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "其中 (xi, yi) 是多边形第i个顶点的坐标。"
+      },
+      "algorithm": {
+        "title": "算法实现",
+        "description": "以下是用于查找内接和外接正方形的算法的简化版本：",
+        "inscribedSquare": "查找内接正方形",
+        "inscribedCode": "function findInscribedSquare(curve) {\n  let bestSquare = [];\n  let maxSize = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const center = getRandomPointInside(curve);\n    const square = findLargestSquareAtPoint(center, curve);\n    if (square.size > maxSize) {\n      maxSize = square.size;\n      bestSquare = square.points;\n    }\n  }\n\n  return bestSquare;\n}",
+        "inscribedExplanation": "该算法使用蒙特卡洛方法，在曲线内尝试随机点以找到最大的内接正方形。",
+        "extendedSquare": "查找外接正方形",
+        "extendedCode": "function findExtendedSquare(curve) {\n  const minX = Math.min(...curve.map(p => p.x));\n  const maxX = Math.max(...curve.map(p => p.x));\n  const minY = Math.min(...curve.map(p => p.y));\n  const maxY = Math.max(...curve.map(p => p.y));\n\n  const centerX = (minX + maxX) / 2;\n  const centerY = (minY + maxY) / 2;\n  const size = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centerX - size / 2, y: centerY - size / 2 },\n    { x: centerX + size / 2, y: centerY - size / 2 },\n    { x: centerX + size / 2, y: centerY + size / 2 },\n    { x: centerX - size / 2, y: centerY + size / 2 },\n  ];\n}",
+        "extendedExplanation": "该算法找到曲线的边界框并创建一个完全包围它的正方形。"
+      }
+    },
+    "howToUse": {
+      "title": "如何使用",
+      "steps": {
+        "step1": "从工具栏中选择绘图工具。",
+        "step2": "在画布上绘制闭合曲线。",
+        "step3": "点击 查找内接正方形 以定位内接正方形。",
+        "step4": "点击 查找外接正方形 以找到包围正方形。",
+        "step5": "查看曲线和正方形的数学数据。",
+        "step6": "使用 清除 按钮重新开始绘制新曲线。",
+        "step7": "尝试不同的形状并比较结果！"
+      }
+    },
+    "furtherExploration": {
+      "title": "进一步探索",
+      "description": "内接正方形问题为数学探索开辟了许多途径：",
+      "topics": {
+        "circles": "研究完美圆形曲线产生内接正方形的频率。",
+        "algorithms": "探索更高效地查找内接正方形的不同算法。",
+        "relationships": "研究曲线面积与其内接正方形之间的关系。",
+        "3d": "考虑这个问题如何扩展到三维空间中的内接立方体。"
+      }
+    },
+    "conclusion": "祝您探索愉快，愿您的数学好奇心永不停息！"
+  },
+  "footer": {
+    "title": "关于本项目",
+    "content": "一个结合几何学和创造力的交互式工具。",
+    "techStack": "使用高级数学和网络技术构建",
+    "creator": "由墨西哥网页开发者路易斯创建",
+    "sourceCode": "查看源代码"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "增强型内接正方形查找器"
+  }
+}

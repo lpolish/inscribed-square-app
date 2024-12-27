@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Rilevatore Avanzato di Quadrati Inscritti",
+    "description": "Uno strumento geometrico interattivo per esplorare i quadrati inscritti in curve chiuse"
+  },
+  "HomePage": {
+    "title": "Rilevatore Avanzato di Quadrati Inscritti",
+    "description": "Esplora il mondo affascinante dei quadrati inscritti in curve chiuse",
+    "tools": {
+      "title": "Strumenti di Disegno",
+      "freehand": "Mano libera",
+      "line": "Linea",
+      "circle": "Cerchio",
+      "rectangle": "Rettangolo",
+      "polygon": "Poligono",
+      "triangle": "Triangolo",
+      "square": "Quadrato",
+      "pentagon": "Pentagono",
+      "hexagon": "Esagono",
+      "heptagon": "Ettagono",
+      "octagon": "Ottagono",
+      "nonagon": "Nonagono",
+      "decagon": "Decagono",
+      "descriptions": {
+        "freehand": "Disegna liberamente",
+        "line": "Disegna una linea retta",
+        "circle": "Crea un cerchio perfetto",
+        "rectangle": "Disegna un rettangolo o un quadrato",
+        "polygon": "Crea un poligono regolare"
+      },
+      "polygonEdges": "Numero di lati: {count}"
+    },
+    "buttons": {
+      "findInscribed": "Trova Quadrato Inscritto",
+      "findExtended": "Trova Quadrato Esteso",
+      "clear": "Cancella"
+    },
+    "labels": {
+      "showGrid": "Mostra Griglia"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Sviluppatore Web",
+      "location": "Messico"
+    },
+    "footer": {
+      "title": "Informazioni su Questo Progetto",
+      "content": "Uno strumento interattivo che combina geometria e creatività.",
+      "techStack": "Costruito con matematica avanzata e tecnologia web",
+      "creator": "Creato da Luis, sviluppatore web dal Messico",
+      "sourceCode": "Visualizza codice sorgente"
+    }
+  },
+  "mathData": {
+    "title": "Dati Matematici",
+    "curveLength": "Lunghezza della Curva",
+    "curveArea": "Area della Curva",
+    "centroid": "Centroide",
+    "boundingBox": "Riquadro di Delimitazione",
+    "min": "Min",
+    "max": "Max",
+    "noData": "Nessun dato della curva disponibile",
+    "squareType": "Tipo di Quadrato",
+    "inscribed": "Inscritto",
+    "extended": "Esteso",
+    "squareArea": "Area del Quadrato",
+    "formula": {
+      "title": "Formula per il Calcolo dell'Area",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "Dove (xi, yi) sono le coordinate del i-esimo vertice"
+    }
+  },
+  "about": {
+    "title": "Informazioni sul Rilevatore di Quadrati Inscritti",
+    "introduction": {
+      "title": "Introduzione",
+      "paragraph1": "Benvenuti nel Rilevatore di Quadrati Inscritti, uno strumento interattivo che esplora il mondo affascinante della geometria e delle congetture matematiche.",
+      "paragraph2": "Questa applicazione ti permette di disegnare curve chiuse e scoprire quadrati inscritti al loro interno, dando vita a un problema matematico vecchio di un secolo."
+    },
+    "keyConcepts": {
+      "title": "Concetti Chiave",
+      "closedCurves": {
+        "title": "Curve Chiuse",
+        "description": "Una curva chiusa è un ciclo continuo in un piano, come un cerchio o qualsiasi forma che termina dove inizia."
+      },
+      "inscribedSquares": {
+        "title": "Quadrati Inscritti",
+        "description": "Un quadrato inscritto è un quadrato che si adatta perfettamente all'interno di una curva chiusa, con tutti e quattro gli angoli che toccano la curva."
+      },
+      "extendedSquares": {
+        "title": "Quadrati Estesi",
+        "description": "Un quadrato esteso è il quadrato più piccolo che racchiude completamente la curva chiusa."
+      },
+      "areaCalculation": {
+        "title": "Calcolo dell'Area",
+        "description": "L'area della curva e dei quadrati viene calcolata utilizzando algoritmi geometrici avanzati."
+      },
+      "curveLength": {
+        "title": "Lunghezza della Curva",
+        "description": "La distanza totale intorno alla curva, misurata in kilopixel."
+      }
+    },
+    "mathFoundations": {
+      "title": "Fondamenti Matematici",
+      "shoelace": {
+        "title": "Formula del Laccio",
+        "description": "Utilizziamo la formula del laccio (nota anche come formula del topografo) per calcolare l'area del poligono formato dalla curva:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Dove (xi, yi) sono le coordinate del i-esimo vertice del poligono."
+      },
+      "algorithm": {
+        "title": "Implementazione dell'Algoritmo",
+        "description": "Ecco una versione semplificata degli algoritmi utilizzati per trovare quadrati inscritti ed estesi:",
+        "inscribedSquare": "Trovare il Quadrato Inscritto",
+        "inscribedCode": "function trovaQuadratoInscritto(curva) {\n  let migliorQuadrato = [];\n  let dimensioneMassima = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const centro = otteniPuntoCasualeInterno(curva);\n    const quadrato = trovaMassimoQuadratoInPunto(centro, curva);\n    if (quadrato.dimensione > dimensioneMassima) {\n      dimensioneMassima = quadrato.dimensione;\n      migliorQuadrato = quadrato.punti;\n    }\n  }\n\n  return migliorQuadrato;\n}",
+        "inscribedExplanation": "Questo algoritmo utilizza un approccio Monte Carlo, provando punti casuali all'interno della curva per trovare il quadrato inscritto più grande.",
+        "extendedSquare": "Trovare il Quadrato Esteso",
+        "extendedCode": "function trovaQuadratoEsteso(curva) {\n  const minX = Math.min(...curva.map(p => p.x));\n  const maxX = Math.max(...curva.map(p => p.x));\n  const minY = Math.min(...curva.map(p => p.y));\n  const maxY = Math.max(...curva.map(p => p.y));\n\n  const centroX = (minX + maxX) / 2;\n  const centroY = (minY + maxY) / 2;\n  const dimensione = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centroX - dimensione / 2, y: centroY - dimensione / 2 },\n    { x: centroX + dimensione / 2, y: centroY - dimensione / 2 },\n    { x: centroX + dimensione / 2, y: centroY + dimensione / 2 },\n    { x: centroX - dimensione / 2, y: centroY + dimensione / 2 },\n  ];\n}",
+        "extendedExplanation": "Questo algoritmo trova il riquadro di delimitazione della curva e crea un quadrato che la racchiude completamente."
+      }
+    },
+    "howToUse": {
+      "title": "Come Usare",
+      "steps": {
+        "step1": "Seleziona uno strumento di disegno dalla barra degli strumenti.",
+        "step2": "Disegna una curva chiusa sulla tela.",
+        "step3": "Clicca su 'Trova Quadrato Inscritto' per localizzare un quadrato inscritto.",
+        "step4": "Clicca su 'Trova Quadrato Esteso' per trovare il quadrato che racchiude.",
+        "step5": "Visualizza i dati matematici per la tua curva e i quadrati.",
+        "step6": "Usa il pulsante 'Cancella' per ricominciare con una nuova curva.",
+        "step7": "Sperimenta con forme diverse e confronta i risultati!"
+      }
+    },
+    "furtherExploration": {
+      "title": "Ulteriore Esplorazione",
+      "description": "Il problema del quadrato inscritto apre molte strade per l'esplorazione matematica:",
+      "topics": {
+        "circles": "Indaga quanto spesso le curve perfettamente circolari producono quadrati inscritti.",
+        "algorithms": "Esplora diversi algoritmi per trovare quadrati inscritti in modo più efficiente.",
+        "relationships": "Studia la relazione tra l'area della curva e il suo quadrato inscritto.",
+        "3d": "Considera come questo problema potrebbe estendersi a tre dimensioni con cubi inscritti."
+      }
+    },
+    "conclusion": "Buona esplorazione, e che la tua curiosità matematica non cessi mai!"
+  },
+  "footer": {
+    "title": "Informazioni su Questo Progetto",
+    "content": "Uno strumento interattivo che combina geometria e creatività.",
+    "techStack": "Costruito con matematica avanzata e tecnologia web",
+    "creator": "Creato da Luis, sviluppatore web dal Messico",
+    "sourceCode": "Visualizza codice sorgente"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Rilevatore Avanzato di Quadrati Inscritti"
+  }
+}
+

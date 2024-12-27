@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Erweiterter Einbeschriebener-Quadrat-Finder",
+    "description": "Ein interaktives geometrisches Werkzeug zur Erforschung einbeschriebener Quadrate in geschlossenen Kurven"
+  },
+  "HomePage": {
+    "title": "Erweiterter Einbeschriebener-Quadrat-Finder",
+    "description": "Erforschen Sie die faszinierende Welt der einbeschriebenen Quadrate in geschlossenen Kurven",
+    "tools": {
+      "title": "Zeichenwerkzeuge",
+      "freehand": "Freihand",
+      "line": "Linie",
+      "circle": "Kreis",
+      "rectangle": "Rechteck",
+      "polygon": "Polygon",
+      "triangle": "Dreieck",
+      "square": "Quadrat",
+      "pentagon": "Fünfeck",
+      "hexagon": "Sechseck",
+      "heptagon": "Siebeneck",
+      "octagon": "Achteck",
+      "nonagon": "Neuneck",
+      "decagon": "Zehneck",
+      "descriptions": {
+        "freehand": "Frei zeichnen",
+        "line": "Eine gerade Linie zeichnen",
+        "circle": "Einen perfekten Kreis erstellen",
+        "rectangle": "Ein Rechteck oder Quadrat zeichnen",
+        "polygon": "Ein regelmäßiges Polygon erstellen"
+      },
+      "polygonEdges": "Anzahl der Kanten: {count}"
+    },
+    "buttons": {
+      "findInscribed": "Einbeschriebenes Quadrat finden",
+      "findExtended": "Erweitertes Quadrat finden",
+      "clear": "Löschen"
+    },
+    "labels": {
+      "showGrid": "Raster anzeigen"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Webentwickler",
+      "location": "Mexiko"
+    },
+    "footer": {
+      "title": "Über dieses Projekt",
+      "content": "Ein interaktives Werkzeug, das Geometrie und Kreativität verbindet.",
+      "techStack": "Erstellt mit fortgeschrittener Mathematik und Webtechnologie",
+      "creator": "Erstellt von Luis, Webentwickler aus Mexiko",
+      "sourceCode": "Quellcode anzeigen"
+    }
+  },
+  "mathData": {
+    "title": "Mathematische Daten",
+    "curveLength": "Kurvenlänge",
+    "curveArea": "Kurvenfläche",
+    "centroid": "Schwerpunkt",
+    "boundingBox": "Begrenzungsrahmen",
+    "min": "Min",
+    "max": "Max",
+    "noData": "Keine Kurvendaten verfügbar",
+    "squareType": "Quadrattyp",
+    "inscribed": "Einbeschrieben",
+    "extended": "Erweitert",
+    "squareArea": "Quadratfläche",
+    "formula": {
+      "title": "Flächenberechnungsformel",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i+ x_1 y_n)\\right|",
+      "explanation": "Wobei (xi, yi) die Koordinaten des i-ten Scheitelpunkts sind"
+    }
+  },
+  "about": {
+    "title": "Über den Einbeschriebener-Quadrat-Finder",
+    "introduction": {
+      "title": "Einführung",
+      "paragraph1": "Willkommen beim Einbeschriebener-Quadrat-Finder, einem interaktiven Werkzeug, das die faszinierende Welt der Geometrie und mathematischen Vermutungen erforscht.",
+      "paragraph2": "Diese Anwendung ermöglicht es Ihnen, geschlossene Kurven zu zeichnen und einbeschriebene Quadrate darin zu entdecken, wodurch ein jahrhundertealtes mathematisches Problem zum Leben erweckt wird."
+    },
+    "keyConcepts": {
+      "title": "Schlüsselkonzepte",
+      "closedCurves": {
+        "title": "Geschlossene Kurven",
+        "description": "Eine geschlossene Kurve ist eine kontinuierliche Schleife in einer Ebene, wie ein Kreis oder jede Form, die dort endet, wo sie beginnt."
+      },
+      "inscribedSquares": {
+        "title": "Einbeschriebene Quadrate",
+        "description": "Ein einbeschriebenes Quadrat ist ein Quadrat, das perfekt in eine geschlossene Kurve passt, wobei alle vier Ecken die Kurve berühren."
+      },
+      "extendedSquares": {
+        "title": "Erweiterte Quadrate",
+        "description": "Ein erweitertes Quadrat ist das kleinste Quadrat, das die geschlossene Kurve vollständig umschließt."
+      },
+      "areaCalculation": {
+        "title": "Flächenberechnung",
+        "description": "Die Fläche der Kurve und der Quadrate wird mit fortgeschrittenen geometrischen Algorithmen berechnet."
+      },
+      "curveLength": {
+        "title": "Kurvenlänge",
+        "description": "Die Gesamtdistanz um die Kurve herum, gemessen in Kilopixeln."
+      }
+    },
+    "mathFoundations": {
+      "title": "Mathematische Grundlagen",
+      "shoelace": {
+        "title": "Schnürsenkelformel",
+        "description": "Wir verwenden die Schnürsenkelformel (auch bekannt als Gaußsche Trapezformel) zur Berechnung der Fläche des von der Kurve gebildeten Polygons:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Wobei (xi, yi) die Koordinaten des i-ten Scheitelpunkts des Polygons sind."
+      },
+      "algorithm": {
+        "title": "Algorithmus-Implementierung",
+        "description": "Hier ist eine vereinfachte Version der Algorithmen, die zum Finden von einbeschriebenen und erweiterten Quadraten verwendet werden:",
+        "inscribedSquare": "Einbeschriebenes Quadrat finden",
+        "inscribedCode": "function findeEinbeschriebenesQuadrat(kurve) {\n  let bestesQuadrat = [];\n  let maxGroesse = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const zentrum = holeZufaelligenPunktInnerhalb(kurve);\n    const quadrat = findeGroesstesQuadratAnPunkt(zentrum, kurve);\n    if (quadrat.groesse > maxGroesse) {\n      maxGroesse = quadrat.groesse;\n      bestesQuadrat = quadrat.punkte;\n    }\n  }\n\n  return bestesQuadrat;\n}",
+        "inscribedExplanation": "Dieser Algorithmus verwendet einen Monte-Carlo-Ansatz, indem er zufällige Punkte innerhalb der Kurve ausprobiert, um das größte einbeschriebene Quadrat zu finden.",
+        "extendedSquare": "Erweitertes Quadrat finden",
+        "extendedCode": "function findeErweitertesQuadrat(kurve) {\n  const minX = Math.min(...kurve.map(p => p.x));\n  const maxX = Math.max(...kurve.map(p => p.x));\n  const minY = Math.min(...kurve.map(p => p.y));\n  const maxY = Math.max(...kurve.map(p => p.y));\n\n  const zentrumsX = (minX + maxX) / 2;\n  const zentrumsY = (minY + maxY) / 2;\n  const groesse = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: zentrumsX - groesse / 2, y: zentrumsY - groesse / 2 },\n    { x: zentrumsX + groesse / 2, y: zentrumsY - groesse / 2 },\n    { x: zentrumsX + groesse / 2, y: zentrumsY + groesse / 2 },\n    { x: zentrumsX - groesse / 2, y: zentrumsY + groesse / 2 },\n  ];\n}",
+        "extendedExplanation": "Dieser Algorithmus findet den Begrenzungsrahmen der Kurve und erstellt ein Quadrat, das sie vollständig umschließt."
+      }
+    },
+    "howToUse": {
+      "title": "Verwendung",
+      "steps": {
+        "step1": "Wählen Sie ein Zeichenwerkzeug aus der Werkzeugleiste.",
+        "step2": "Zeichnen Sie eine geschlossene Kurve auf der Leinwand.",
+        "step3": "Klicken Sie auf 'Einbeschriebenes Quadrat finden', um ein einbeschriebenes Quadrat zu lokalisieren.",
+        "step4": "Klicken Sie auf 'Erweitertes Quadrat finden', um das umschließende Quadrat zu finden.",
+        "step5": "Betrachten Sie die mathematischen Daten für Ihre Kurve und Quadrate.",
+        "step6": "Verwenden Sie die 'Löschen'-Schaltfläche, um mit einer neuen Kurve zu beginnen.",
+        "step7": "Experimentieren Sie mit verschiedenen Formen und vergleichen Sie die Ergebnisse!"
+      }
+    },
+    "furtherExploration": {
+      "title": "Weiterführende Erforschung",
+      "description": "Das Problem des einbeschriebenen Quadrats eröffnet viele Wege für mathematische Erforschung:",
+      "topics": {
+        "circles": "Untersuchen Sie, wie oft perfekt kreisförmige Kurven einbeschriebene Quadrate ergeben.",
+        "algorithms": "Erforschen Sie verschiedene Algorithmen, um einbeschriebene Quadrate effizienter zu finden.",
+        "relationships": "Untersuchen Sie die Beziehung zwischen der Fläche der Kurve und ihrem einbeschriebenen Quadrat.",
+        "3d": "Betrachten Sie, wie sich dieses Problem auf drei Dimensionen mit einbeschriebenen Würfeln erweitern lässt."
+      }
+    },
+    "conclusion": "Viel Spaß beim Erforschen, und möge Ihre mathematische Neugier nie enden!"
+  },
+  "footer": {
+    "title": "Über dieses Projekt",
+    "content": "Ein interaktives Werkzeug, das Geometrie und Kreativität verbindet.",
+    "techStack": "Erstellt mit fortgeschrittener Mathematik und Webtechnologie",
+    "creator": "Erstellt von Luis, Webentwickler aus Mexiko",
+    "sourceCode": "Quellcode anzeigen"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Erweiterter Einbeschriebener-Quadrat-Finder"
+  }
+}
+

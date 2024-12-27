@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "拡張内接正方形ファインダー",
+    "description": "閉曲線内の内接正方形を探索するインタラクティブな幾何学ツール"
+  },
+  "HomePage": {
+    "title": "拡張内接正方形ファインダー",
+    "description": "閉曲線内の内接正方形の魅力的な世界を探索しよう",
+    "tools": {
+      "title": "描画ツール",
+      "freehand": "フリーハンド",
+      "line": "直線",
+      "circle": "円",
+      "rectangle": "長方形",
+      "polygon": "多角形",
+      "triangle": "三角形",
+      "square": "正方形",
+      "pentagon": "五角形",
+      "hexagon": "六角形",
+      "heptagon": "七角形",
+      "octagon": "八角形",
+      "nonagon": "九角形",
+      "decagon": "十角形",
+      "descriptions": {
+        "freehand": "自由に描画",
+        "line": "直線を描く",
+        "circle": "完全な円を作成",
+        "rectangle": "長方形または正方形を描く",
+        "polygon": "正多角形を作成"
+      },
+      "polygonEdges": "辺の数: {count}"
+    },
+    "buttons": {
+      "findInscribed": "内接正方形を見つける",
+      "findExtended": "外接正方形を見つける",
+      "clear": "クリア"
+    },
+    "labels": {
+      "showGrid": "グリッドを表示"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "ウェブ開発者",
+      "location": "メキシコ"
+    },
+    "footer": {
+      "title": "このプロジェクトについて",
+      "content": "幾何学と創造性を組み合わせたインタラクティブツール。",
+      "techStack": "高度な数学とウェブ技術で構築",
+      "creator": "メキシコのウェブ開発者、Luisが制作",
+      "sourceCode": "ソースコードを見る"
+    }
+  },
+  "mathData": {
+    "title": "数学的データ",
+    "curveLength": "曲線の長さ",
+    "curveArea": "曲線の面積",
+    "centroid": "重心",
+    "boundingBox": "バウンディングボックス",
+    "min": "最小",
+    "max": "最大",
+    "noData": "曲線データがありません",
+    "squareType": "正方形の種類",
+    "inscribed": "内接",
+    "extended": "外接",
+    "squareArea": "正方形の面積",
+    "formula": {
+      "title": "面積計算の公式",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "ここで、(xi, yi)はi番目の頂点の座標です"
+    }
+  },
+  "about": {
+    "title": "内接正方形ファインダーについて",
+    "introduction": {
+      "title": "はじめに",
+      "paragraph1": "内接正方形ファインダーへようこそ。このインタラクティブツールは、幾何学と数学的予想の魅力的な世界を探索します。",
+      "paragraph2": "このアプリケーションでは、閉曲線を描画し、その中に内接する正方形を発見することができ、1世紀以上前からの数学的問題に命を吹き込みます。"
+    },
+    "keyConcepts": {
+      "title": "主要概念",
+      "closedCurves": {
+        "title": "閉曲線",
+        "description": "閉曲線は平面上の連続したループで、円や始点と終点が一致する任意の形状のことです。"
+      },
+      "inscribedSquares": {
+        "title": "内接正方形",
+        "description": "内接正方形は、閉曲線の内側に完全に収まる正方形で、4つの角がすべて曲線に接しています。"
+      },
+      "extendedSquares": {
+        "title": "外接正方形",
+        "description": "外接正方形は、閉曲線を完全に囲む最小の正方形です。"
+      },
+      "areaCalculation": {
+        "title": "面積計算",
+        "description": "曲線と正方形の面積は、高度な幾何学的アルゴリズムを使用して計算されます。"
+      },
+      "curveLength": {
+        "title": "曲線の長さ",
+        "description": "曲線の周囲の総距離で、キロピクセル単位で測定されます。"
+      }
+    },
+    "mathFoundations": {
+      "title": "数学的基礎",
+      "shoelace": {
+        "title": "靴紐公式",
+        "description": "曲線によって形成される多角形の面積を計算するために、靴紐公式（測量士の公式としても知られる）を使用します：",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "ここで、(xi, yi)は多角形のi番目の頂点の座標です。"
+      },
+      "algorithm": {
+        "title": "アルゴリズムの実装",
+        "description": "内接正方形と外接正方形を見つけるために使用されるアルゴリズムの簡略版は以下の通りです：",
+        "inscribedSquare": "内接正方形の探索",
+        "inscribedCode": "function 内接正方形を探す(曲線) {\n  let 最良の正方形 = [];\n  let 最大サイズ = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const 中心 = 曲線内のランダムな点を取得();\n    const 正方形 = 点での最大正方形を探す(中心, 曲線);\n    if (正方形.サイズ > 最大サイズ) {\n      最大サイズ = 正方形.サイズ;\n      最良の正方形 = 正方形.点;\n    }\n  }\n\n  return 最良の正方形;\n}",
+        "inscribedExplanation": "このアルゴリズムはモンテカルロ法を使用し、曲線内のランダムな点を試して最大の内接正方形を見つけます。",
+        "extendedSquare": "外接正方形の探索",
+        "extendedCode": "function 外接正方形を探す(曲線) {\n  const 最小X = Math.min(...曲線.map(p => p.x));\n  const 最大X = Math.max(...曲線.map(p => p.x));\n  const 最小Y = Math.min(...曲線.map(p => p.y));\n  const 最大Y = Math.max(...曲線.map(p => p.y));\n\n  const 中心X = (最小X + 最大X) / 2;\n  const 中心Y = (最小Y + 最大Y) / 2;\n  const サイズ = Math.max(最大X - 最小X, 最大Y - 最小Y);\n\n  return [\n    { x: 中心X - サイズ / 2, y: 中心Y - サイズ / 2 },\n    { x: 中心X + サイズ / 2, y: 中心Y - サイズ / 2 },\n    { x: 中心X + サイズ / 2, y: 中心Y + サイズ / 2 },\n    { x: 中心X - サイズ / 2, y: 中心Y + サイズ / 2 },\n  ];\n}",
+        "extendedExplanation": "このアルゴリズムは曲線のバウンディングボックスを見つけ、それを完全に包含する正方形を作成します。"
+      }
+    },
+    "howToUse": {
+      "title": "使用方法",
+      "steps": {
+        "step1": "ツールバーから描画ツールを選択します。",
+        "step2": "キャンバス上に閉曲線を描きます。",
+        "step3": "'内接正方形を見つける'をクリックして内接正方形を探します。",
+        "step4": "'外接正方形を見つける'をクリックして囲む正方形を見つけます。",
+        "step5": "曲線と正方形の数学的データを確認します。",
+        "step6": "'クリア'ボタンを使用して新しい曲線で始めます。",
+        "step7": "さまざまな形状を試して結果を比較してみましょう！"
+      }
+    },
+    "furtherExploration": {
+      "title": "さらなる探求",
+      "description": "内接正方形問題は、数学的探求のための多くの道を開きます：",
+      "topics": {
+        "circles": "完全な円形の曲線がどれくらいの頻度で内接正方形を生成するか調査します。",
+        "algorithms": "内接正方形をより効率的に見つけるための異なるアルゴリズムを探索します。",
+        "relationships": "曲線の面積とその内接正方形の関係を研究します。",
+        "3d": "この問題が3次元の内接立方体にどのように拡張できるか考えます。"
+      }
+    },
+    "conclusion": "楽しい探求を！そして、あなたの数学的好奇心が尽きることがありませんように！"
+  },
+  "footer": {
+    "title": "このプロジェクトについて",
+    "content": "幾何学と創造性を組み合わせたインタラクティブツール。",
+    "techStack": "高度な数学とウェブ技術で構築",
+    "creator": "メキシコのウェブ開発者、Luisが制作",
+    "sourceCode": "ソースコードを見る"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "拡張内接正方形ファインダー"
+  }
+}
+

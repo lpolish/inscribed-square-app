@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Gelişmiş İçyazılı Kare Bulucu",
+    "description": "Kapalı eğrilerde içyazılı kareleri keşfetmek için interaktif bir geometrik araç"
+  },
+  "HomePage": {
+    "title": "Gelişmiş İçyazılı Kare Bulucu",
+    "description": "Kapalı eğrilerde içyazılı karelerin büyüleyici dünyasını keşfedin",
+    "tools": {
+      "title": "Çizim Araçları",
+      "freehand": "Serbest El",
+      "line": "Çizgi",
+      "circle": "Daire",
+      "rectangle": "Dikdörtgen",
+      "polygon": "Çokgen",
+      "triangle": "Üçgen",
+      "square": "Kare",
+      "pentagon": "Beşgen",
+      "hexagon": "Altıgen",
+      "heptagon": "Yedigen",
+      "octagon": "Sekizgen",
+      "nonagon": "Dokuzgen",
+      "decagon": "Ongen",
+      "descriptions": {
+        "freehand": "Serbestçe çizin",
+        "line": "Düz bir çizgi çizin",
+        "circle": "Mükemmel bir daire oluşturun",
+        "rectangle": "Bir dikdörtgen veya kare çizin",
+        "polygon": "Düzenli bir çokgen oluşturun"
+      },
+      "polygonEdges": "Kenar sayısı: {count}"
+    },
+    "buttons": {
+      "findInscribed": "İçyazılı Kare Bul",
+      "findExtended": "Genişletilmiş Kare Bul",
+      "clear": "Temizle"
+    },
+    "labels": {
+      "showGrid": "Izgarayı Göster"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Web Geliştirici",
+      "location": "Meksika"
+    },
+    "footer": {
+      "title": "Bu Proje Hakkında",
+      "content": "Geometri ve yaratıcılığı birleştiren interaktif bir araç.",
+      "techStack": "Gelişmiş matematik ve web teknolojisi ile oluşturuldu",
+      "creator": "Meksikalı web geliştirici Luis tarafından oluşturuldu",
+      "sourceCode": "Kaynak kodu görüntüle"
+    }
+  },
+  "mathData": {
+    "title": "Matematiksel Veriler",
+    "curveLength": "Eğri Uzunluğu",
+    "curveArea": "Eğri Alanı",
+    "centroid": "Ağırlık Merkezi",
+    "boundingBox": "Sınırlayıcı Kutu",
+    "min": "Min",
+    "max": "Maks",
+    "noData": "Eğri verisi mevcut değil",
+    "squareType": "Kare Tipi",
+    "inscribed": "İçyazılı",
+    "extended": "Genişletilmiş",
+    "squareArea": "Kare Alanı",
+    "formula": {
+      "title": "Alan Hesaplama Formülü",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "Burada (xi, yi) i. köşenin koordinatlarıdır"
+    }
+  },
+  "about": {
+    "title": "İçyazılı Kare Bulucu Hakkında",
+    "introduction": {
+      "title": "Giriş",
+      "paragraph1": "İçyazılı Kare Bulucu'ya hoş geldiniz, geometri ve matematiksel varsayımların büyüleyici dünyasını keşfeden interaktif bir araç.",
+      "paragraph2": "Bu uygulama, kapalı eğriler çizmenize ve içlerinde içyazılı kareler keşfetmenize olanak tanıyarak, yüzyıllık bir matematiksel problemi canlandırıyor."
+    },
+    "keyConcepts": {
+      "title": "Temel Kavramlar",
+      "closedCurves": {
+        "title": "Kapalı Eğriler",
+        "description": "Kapalı bir eğri, bir düzlemde sürekli bir döngüdür, bir daire veya başladığı yerde biten herhangi bir şekil gibi."
+      },
+      "inscribedSquares": {
+        "title": "İçyazılı Kareler",
+        "description": "İçyazılı bir kare, kapalı bir eğrinin içine mükemmel şekilde uyan, dört köşesi de eğriye değen bir karedir."
+      },
+      "extendedSquares": {
+        "title": "Genişletilmiş Kareler",
+        "description": "Genişletilmiş bir kare, kapalı eğriyi tamamen kapsayan en küçük karedir."
+      },
+      "areaCalculation": {
+        "title": "Alan Hesaplaması",
+        "description": "Eğri ve karelerin alanı, gelişmiş geometrik algoritmalar kullanılarak hesaplanır."
+      },
+      "curveLength": {
+        "title": "Eğri Uzunluğu",
+        "description": "Eğri etrafındaki toplam mesafe, kilopiksel cinsinden ölçülür."
+      }
+    },
+    "mathFoundations": {
+      "title": "Matematiksel Temeller",
+      "shoelace": {
+        "title": "Ayakkabı Bağı Formülü",
+        "description": "Eğri tarafından oluşturulan çokgenin alanını hesaplamak için ayakkabı bağı formülünü (ayrıca haritacı formülü olarak da bilinir) kullanıyoruz:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Burada (xi, yi) çokgenin i. köşesinin koordinatlarıdır."
+      },
+      "algorithm": {
+        "title": "Algoritma Uygulaması",
+        "description": "İşte içyazılı ve genişletilmiş kareleri bulmak için kullanılan algoritmaların basitleştirilmiş bir versiyonu:",
+        "inscribedSquare": "İçyazılı Kare Bulma",
+        "inscribedCode": "function icyaziliKareBul(egri) {\n  let enIyiKare = [];\n  let maksimumBoyut = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const merkez = rastgeleIcNoktaAl(egri);\n    const kare = noktadaEnBuyukKareyiBul(merkez, egri);\n    if (kare.boyut > maksimumBoyut) {\n      maksimumBoyut = kare.boyut;\n      enIyiKare = kare.noktalar;\n    }\n  }\n\n  return enIyiKare;\n}",
+        "inscribedExplanation": "Bu algoritma, en büyük içyazılı kareyi bulmak için eğri içinde rastgele noktalar deneyerek bir Monte Carlo yaklaşımı kullanır.",
+        "extendedSquare": "Genişletilmiş Kare Bulma",
+        "extendedCode": "function genisletilmisKareBul(egri) {\n  const minX = Math.min(...egri.map(p => p.x));\n  const maksX = Math.max(...egri.map(p => p.x));\n  const minY = Math.min(...egri.map(p => p.y));\n  const maksY = Math.max(...egri.map(p => p.y));\n\n  const merkezX = (minX + maksX) / 2;\n  const merkezY = (minY + maksY) / 2;\n  const boyut = Math.max(maksX - minX, maksY - minY);\n\n  return [\n    { x: merkezX - boyut / 2, y: merkezY - boyut / 2 },\n    { x: merkezX + boyut / 2, y: merkezY - boyut / 2 },\n    { x: merkezX + boyut / 2, y: merkezY + boyut / 2 },\n    { x: merkezX - boyut / 2, y: merkezY + boyut / 2 },\n  ];\n}",
+        "extendedExplanation": "Bu algoritma, eğrinin sınırlayıcı kutusunu bulur ve onu tamamen kapsayan bir kare oluşturur."
+      }
+    },
+    "howToUse": {
+      "title": "Nasıl Kullanılır",
+      "steps": {
+        "step1": "Araç çubuğundan bir çizim aracı seçin.",
+        "step2": "Tuval üzerinde kapalı bir eğri çizin.",
+        "step3": "İçyazılı bir kare bulmak için 'İçyazılı Kare Bul'a tıklayın.",
+        "step4": "Kapsayan kareyi bulmak için 'Genişletilmiş Kare Bul'a tıklayın.",
+        "step5": "Eğriniz ve kareler için matematiksel verileri görüntüleyin.",
+        "step6": "Yeni bir eğri ile başlamak için 'Temizle' düğmesini kullanın.",
+        "step7": "Farklı şekillerle deney yapın ve sonuçları karşılaştırın!"
+      }
+    },
+    "furtherExploration": {
+      "title": "İleri Keşif",
+      "description": "İçyazılı kare problemi, matematiksel keşif için birçok yol açar:",
+      "topics": {
+        "circles": "Mükemmel dairesel eğrilerin ne sıklıkla içyazılı kareler ürettiğini araştırın.",
+        "algorithms": "İçyazılı kareleri daha verimli bir şekilde bulmak için farklı algoritmalar keşfedin.",
+        "relationships": "Eğrinin alanı ile içyazılı karesi arasındaki ilişkiyi inceleyin.",
+        "3d": "Bu problemin içyazılı küplerle üç boyuta nasıl genişleyebileceğini düşünün."
+      }
+    },
+    "conclusion": "Keşfetmekten keyif alın ve matematiksel merakınız hiç bitmesin!"
+  },
+  "footer": {
+    "title": "Bu Proje Hakkında",
+    "content": "Geometri ve yaratıcılığı birleştiren interaktif bir araç.",
+    "techStack": "Gelişmiş matematik ve web teknolojisi ile oluşturuldu",
+    "creator": "Meksikalı web geliştirici Luis tarafından oluşturuldu",
+    "sourceCode": "Kaynak kodu görüntüle"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Gelişmiş İçyazılı Kare Bulucu"
+  }
+}
+

@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Geavanceerde Ingeschreven Vierkanten Zoeker",
+    "description": "Een interactief geometrisch hulpmiddel voor het verkennen van ingeschreven vierkanten in gesloten curves"
+  },
+  "HomePage": {
+    "title": "Geavanceerde Ingeschreven Vierkanten Zoeker",
+    "description": "Verken de fascinerende wereld van ingeschreven vierkanten in gesloten curves",
+    "tools": {
+      "title": "Tekengereedschap",
+      "freehand": "Vrije hand",
+      "line": "Lijn",
+      "circle": "Cirkel",
+      "rectangle": "Rechthoek",
+      "polygon": "Veelhoek",
+      "triangle": "Driehoek",
+      "square": "Vierkant",
+      "pentagon": "Vijfhoek",
+      "hexagon": "Zeshoek",
+      "heptagon": "Zevenhoek",
+      "octagon": "Achthoek",
+      "nonagon": "Negenhoek",
+      "decagon": "Tienhoek",
+      "descriptions": {
+        "freehand": "Vrij tekenen",
+        "line": "Een rechte lijn tekenen",
+        "circle": "Een perfecte cirkel maken",
+        "rectangle": "Een rechthoek of vierkant tekenen",
+        "polygon": "Een regelmatige veelhoek maken"
+      },
+      "polygonEdges": "Aantal zijden: {count}"
+    },
+    "buttons": {
+      "findInscribed": "Vind Ingeschreven Vierkant",
+      "findExtended": "Vind Uitgebreid Vierkant",
+      "clear": "Wissen"
+    },
+    "labels": {
+      "showGrid": "Toon Raster"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Webontwikkelaar",
+      "location": "Mexico"
+    },
+    "footer": {
+      "title": "Over Dit Project",
+      "content": "Een interactief hulpmiddel dat geometrie en creativiteit combineert.",
+      "techStack": "Gebouwd met geavanceerde wiskunde en webtechnologie",
+      "creator": "Gemaakt door Luis, webontwikkelaar uit Mexico",
+      "sourceCode": "Bekijk broncode"
+    }
+  },
+  "mathData": {
+    "title": "Wiskundige Gegevens",
+    "curveLength": "Curvelengte",
+    "curveArea": "Curveoppervlakte",
+    "centroid": "Zwaartepunt",
+    "boundingBox": "Omsluitend Kader",
+    "min": "Min",
+    "max": "Max",
+    "noData": "Geen curvegegevens beschikbaar",
+    "squareType": "Vierkanttype",
+    "inscribed": "Ingeschreven",
+    "extended": "Uitgebreid",
+    "squareArea": "Vierkantoppervlakte",
+    "formula": {
+      "title": "Oppervlakteberekeningsformule",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "Waarbij (xi, yi) de coördinaten zijn van de i-de hoekpunt"
+    }
+  },
+  "about": {
+    "title": "Over de Ingeschreven Vierkanten Zoeker",
+    "introduction": {
+      "title": "Introductie",
+      "paragraph1": "Welkom bij de Ingeschreven Vierkanten Zoeker, een interactief hulpmiddel dat de fascinerende wereld van geometrie en wiskundige vermoedens verkent.",
+      "paragraph2": "Deze applicatie stelt je in staat om gesloten curves te tekenen en ingeschreven vierkanten erin te ontdekken, waardoor een eeuwenoud wiskundig probleem tot leven komt."
+    },
+    "keyConcepts": {
+      "title": "Kernconcepten",
+      "closedCurves": {
+        "title": "Gesloten Curves",
+        "description": "Een gesloten curve is een continue lus in een vlak, zoals een cirkel of elke vorm die eindigt waar hij begint."
+      },
+      "inscribedSquares": {
+        "title": "Ingeschreven Vierkanten",
+        "description": "Een ingeschreven vierkant is een vierkant dat perfect past binnen een gesloten curve, waarbij alle vier de hoeken de curve raken."
+      },
+      "extendedSquares": {
+        "title": "Uitgebreide Vierkanten",
+        "description": "Een uitgebreid vierkant is het kleinste vierkant dat de gesloten curve volledig omsluit."
+      },
+      "areaCalculation": {
+        "title": "Oppervlakteberekening",
+        "description": "De oppervlakte van de curve en vierkanten wordt berekend met geavanceerde geometrische algoritmen."
+      },
+      "curveLength": {
+        "title": "Curvelengte",
+        "description": "De totale afstand rond de curve, gemeten in kilopixels."
+      }
+    },
+    "mathFoundations": {
+      "title": "Wiskundige Grondslagen",
+      "shoelace": {
+        "title": "Vetersluiting Formule",
+        "description": "We gebruiken de vetersluiting formule (ook bekend als de landmeterformule) om de oppervlakte van de veelhoek gevormd door de curve te berekenen:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Waarbij (xi, yi) de coördinaten zijn van de i-de hoekpunt van de veelhoek."
+      },
+      "algorithm": {
+        "title": "Algoritme Implementatie",
+        "description": "Hier is een vereenvoudigde versie van de algoritmen die worden gebruikt om ingeschreven en uitgebreide vierkanten te vinden:",
+        "inscribedSquare": "Het Ingeschreven Vierkant Vinden",
+        "inscribedCode": "function vindIngeschrevenVierkant(curve) {\n  let besteVierkant = [];\n  let maxGrootte = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const centrum = krijgWillekeurigPuntBinnen(curve);\n    const vierkant = vindGrootsteVierkantOpPunt(centrum, curve);\n    if (vierkant.grootte > maxGrootte) {\n      maxGrootte = vierkant.grootte;\n      besteVierkant = vierkant.punten;\n    }\n  }\n\n  return besteVierkant;\n}",
+        "inscribedExplanation": "Dit algoritme gebruikt een Monte Carlo-benadering, waarbij willekeurige punten binnen de curve worden geprobeerd om het grootste ingeschreven vierkant te vinden.",
+        "extendedSquare": "Het Uitgebreide Vierkant Vinden",
+        "extendedCode": "function vindUitgebreidVierkant(curve) {\n  const minX = Math.min(...curve.map(p => p.x));\n  const maxX = Math.max(...curve.map(p => p.x));\n  const minY = Math.min(...curve.map(p => p.y));\n  const maxY = Math.max(...curve.map(p => p.y));\n\n  const centrumX = (minX + maxX) / 2;\n  const centrumY = (minY + maxY) / 2;\n  const grootte = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centrumX - grootte / 2, y: centrumY - grootte / 2 },\n    { x: centrumX + grootte / 2, y: centrumY - grootte / 2 },\n    { x: centrumX + grootte / 2, y: centrumY + grootte / 2 },\n    { x: centrumX - grootte / 2, y: centrumY + grootte / 2 },\n  ];\n}",
+        "extendedExplanation": "Dit algoritme vindt het omsluitende kader van de curve en maakt een vierkant dat deze volledig omsluit."
+      }
+    },
+    "howToUse": {
+      "title": "Hoe te Gebruiken",
+      "steps": {
+        "step1": "Selecteer een tekengereedschap uit de werkbalk.",
+        "step2": "Teken een gesloten curve op het canvas.",
+        "step3": "Klik op 'Vind Ingeschreven Vierkant' om een ingeschreven vierkant te lokaliseren.",
+        "step4": "Klik op 'Vind Uitgebreid Vierkant' om het omsluitende vierkant te vinden.",
+        "step5": "Bekijk de wiskundige gegevens voor je curve en vierkanten.",
+        "step6": "Gebruik de 'Wissen' knop om opnieuw te beginnen met een nieuwe curve.",
+        "step7": "Experimenteer met verschillende vormen en vergelijk de resultaten!"
+      }
+    },
+    "furtherExploration": {
+      "title": "Verdere Verkenning",
+      "description": "Het probleem van het ingeschreven vierkant opent vele wegen voor wiskundige verkenning:",
+      "topics": {
+        "circles": "Onderzoek hoe vaak perfect cirkelvormige curves ingeschreven vierkanten opleveren.",
+        "algorithms": "Verken verschillende algoritmen om ingeschreven vierkanten efficiënter te vinden.",
+        "relationships": "Bestudeer de relatie tussen de oppervlakte van de curve en zijn ingeschreven vierkant.",
+        "3d": "Overweeg hoe dit probleem zich zou kunnen uitbreiden naar drie dimensies met ingeschreven kubussen."
+      }
+    },
+    "conclusion": "Veel plezier met verkennen, en moge je wiskundige nieuwsgierigheid nooit ophouden!"
+  },
+  "footer": {
+    "title": "Over Dit Project",
+    "content": "Een interactief hulpmiddel dat geometrie en creativiteit combineert.",
+    "techStack": "Gebouwd met geavanceerde wiskunde en webtechnologie",
+    "creator": "Gemaakt door Luis, webontwikkelaar uit Mexico",
+    "sourceCode": "Bekijk broncode"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Geavanceerde Ingeschreven Vierkanten Zoeker"
+  }
+}
+

@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "향상된 내접 정사각형 찾기",
+    "description": "폐곡선 내의 내접 정사각형을 탐험하는 대화형 기하학 도구"
+  },
+  "HomePage": {
+    "title": "향상된 내접 정사각형 찾기",
+    "description": "폐곡선 내의 내접 정사각형의 흥미로운 세계를 탐험해보세요",
+    "tools": {
+      "title": "그리기 도구",
+      "freehand": "자유 곡선",
+      "line": "직선",
+      "circle": "원",
+      "rectangle": "직사각형",
+      "polygon": "다각형",
+      "triangle": "삼각형",
+      "square": "정사각형",
+      "pentagon": "오각형",
+      "hexagon": "육각형",
+      "heptagon": "칠각형",
+      "octagon": "팔각형",
+      "nonagon": "구각형",
+      "decagon": "십각형",
+      "descriptions": {
+        "freehand": "자유롭게 그리기",
+        "line": "직선 그리기",
+        "circle": "완벽한 원 만들기",
+        "rectangle": "직사각형 또는 정사각형 그리기",
+        "polygon": "정다각형 만들기"
+      },
+      "polygonEdges": "변의 수: {count}"
+    },
+    "buttons": {
+      "findInscribed": "내접 정사각형 찾기",
+      "findExtended": "외접 정사각형 찾기",
+      "clear": "지우기"
+    },
+    "labels": {
+      "showGrid": "격자 표시"
+    },
+    "creator": {
+      "name": "루이스",
+      "role": "웹 개발자",
+      "location": "멕시코"
+    },
+    "footer": {
+      "title": "이 프로젝트에 대하여",
+      "content": "기하학과 창의성을 결합한 대화형 도구입니다.",
+      "techStack": "고급 수학과 웹 기술로 구축되었습니다",
+      "creator": "멕시코 출신의 웹 개발자 루이스가 제작했습니다",
+      "sourceCode": "소스 코드 보기"
+    }
+  },
+  "mathData": {
+    "title": "수학적 데이터",
+    "curveLength": "곡선 길이",
+    "curveArea": "곡선 면적",
+    "centroid": "중심점",
+    "boundingBox": "경계 상자",
+    "min": "최소",
+    "max": "최대",
+    "noData": "곡선 데이터가 없습니다",
+    "squareType": "정사각형 유형",
+    "inscribed": "내접",
+    "extended": "외접",
+    "squareArea": "정사각형 면적",
+    "formula": {
+      "title": "면적 계산 공식",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "여기서 (xi, yi)는 i번째 꼭짓점의 좌표입니다"
+    }
+  },
+  "about": {
+    "title": "내접 정사각형 찾기에 대하여",
+    "introduction": {
+      "title": "소개",
+      "paragraph1": "내접 정사각형 찾기에 오신 것을 환영합니다. 이 대화형 도구는 기하학과 수학적 추측의 흥미로운 세계를 탐험합니다.",
+      "paragraph2": "이 애플리케이션을 통해 폐곡선을 그리고 그 안에 내접하는 정사각형을 발견할 수 있어, 100년 된 수학 문제를 생생하게 체험할 수 있습니다."
+    },
+    "keyConcepts": {
+      "title": "주요 개념",
+      "closedCurves": {
+        "title": "폐곡선",
+        "description": "폐곡선은 평면상에서 연속적인 루프로, 원이나 시작점에서 끝나는 모든 형태의 곡선을 말합니다."
+      },
+      "inscribedSquares": {
+        "title": "내접 정사각형",
+        "description": "내접 정사각형은 폐곡선 내부에 완벽하게 들어맞는 정사각형으로, 네 모서리가 모두 곡선에 닿아있습니다."
+      },
+      "extendedSquares": {
+        "title": "외접 정사각형",
+        "description": "외접 정사각형은 폐곡선을 완전히 둘러싸는 가장 작은 정사각형입니다."
+      },
+      "areaCalculation": {
+        "title": "면적 계산",
+        "description": "곡선과 정사각형의 면적은 고급 기하학 알고리즘을 사용하여 계산됩니다."
+      },
+      "curveLength": {
+        "title": "곡선 길이",
+        "description": "곡선 주위의 총 거리로, 킬로픽셀 단위로 측정됩니다."
+      }
+    },
+    "mathFoundations": {
+      "title": "수학적 기초",
+      "shoelace": {
+        "title": "신발끈 공식",
+        "description": "우리는 신발끈 공식(측량사의 공식이라고도 함)을 사용하여 곡선이 형성하는 다각형의 면적을 계산합니다:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "여기서 (xi, yi)는 다각형의 i번째 꼭짓점의 좌표입니다."
+      },
+      "algorithm": {
+        "title": "알고리즘 구현",
+        "description": "내접 및 외접 정사각형을 찾는 데 사용되는 알고리즘의 간단한 버전은 다음과 같습니다:",
+        "inscribedSquare": "내접 정사각형 찾기",
+        "inscribedCode": "function findInscribedSquare(curve) {\n  let bestSquare = [];\n  let maxSize = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const center = getRandomPointInside(curve);\n    const square = findLargestSquareAtPoint(center, curve);\n    if (square.size > maxSize) {\n      maxSize = square.size;\n      bestSquare = square.points;\n    }\n  }\n\n  return bestSquare;\n}",
+        "inscribedExplanation": "이 알고리즘은 몬테카를로 접근 방식을 사용하여 곡선 내부의 무작위 점을 시도하여 가장 큰 내접 정사각형을 찾습니다.",
+        "extendedSquare": "외접 정사각형 찾기",
+        "extendedCode": "function findExtendedSquare(curve) {\n  const minX = Math.min(...curve.map(p => p.x));\n  const maxX = Math.max(...curve.map(p => p.x));\n  const minY = Math.min(...curve.map(p => p.y));\n  const maxY = Math.max(...curve.map(p => p.y));\n\n  const centerX = (minX + maxX) / 2;\n  const centerY = (minY + maxY) / 2;\n  const size = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centerX - size / 2, y: centerY - size / 2 },\n    { x: centerX + size / 2, y: centerY - size / 2 },\n    { x: centerX + size / 2, y: centerY + size / 2 },\n    { x: centerX - size / 2, y: centerY + size / 2 },\n  ];\n}",
+        "extendedExplanation": "이 알고리즘은 곡선의 경계 상자를 찾고 이를 완전히 포함하는 정사각형을 만듭니다."
+      }
+    },
+    "howToUse": {
+      "title": "사용 방법",
+      "steps": {
+        "step1": "도구 모음에서 그리기 도구를 선택하세요.",
+        "step2": "캔버스에 폐곡선을 그리세요.",
+        "step3": "'내접 정사각형 찾기'를 클릭하여 내접 정사각형을 찾으세요.",
+        "step4": "'외접 정사각형 찾기'를 클릭하여 외접 정사각형을 찾으세요.",
+        "step5": "곡선과 정사각형에 대한 수학적 데이터를 확인하세요.",
+        "step6": "'지우기' 버튼을 사용하여 새로운 곡선으로 다시 시작하세요.",
+        "step7": "다양한 모양을 실험하고 결과를 비교해보세요!"
+      }
+    },
+    "furtherExploration": {
+      "title": "추가 탐구",
+      "description": "내접 정사각형 문제는 수학적 탐구의 많은 길을 열어줍니다:",
+      "topics": {
+        "circles": "완벽한 원형 곡선이 내접 정사각형을 얼마나 자주 생성하는지 조사해보세요.",
+        "algorithms": "내접 정사각형을 더 효율적으로 찾는 다양한 알고리즘을 탐구해보세요.",
+        "relationships": "곡선의 면적과 그 내접 정사각형 사이의 관계를 연구해보세요.",
+        "3d": "이 문제가 내접 정육면체와 함께 3차원으로 어떻게 확장될 수 있는지 고려해보세요."
+      }
+    },
+    "conclusion": "즐거운 탐구 되세요, 그리고 여러분의 수학적 호기심이 끊이지 않기를 바랍니다!"
+  },
+  "footer": {
+    "title": "이 프로젝트에 대하여",
+    "content": "기하학과 창의성을 결합한 대화형 도구입니다.",
+    "techStack": "고급 수학과 웹 기술로 구축되었습니다",
+    "creator": "멕시코 출신의 웹 개발자 루이스가 제작했습니다",
+    "sourceCode": "소스 코드 보기"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "향상된 내접 정사각형 찾기"
+  }
+}

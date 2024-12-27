@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Localizador Avançado de Quadrados Inscritos",
+    "description": "Uma ferramenta geométrica interativa para explorar quadrados inscritos em curvas fechadas"
+  },
+  "HomePage": {
+    "title": "Localizador Avançado de Quadrados Inscritos",
+    "description": "Explore o fascinante mundo dos quadrados inscritos em curvas fechadas",
+    "tools": {
+      "title": "Ferramentas de Desenho",
+      "freehand": "Mão livre",
+      "line": "Linha",
+      "circle": "Círculo",
+      "rectangle": "Retângulo",
+      "polygon": "Polígono",
+      "triangle": "Triângulo",
+      "square": "Quadrado",
+      "pentagon": "Pentágono",
+      "hexagon": "Hexágono",
+      "heptagon": "Heptágono",
+      "octagon": "Octógono",
+      "nonagon": "Eneágono",
+      "decagon": "Decágono",
+      "descriptions": {
+        "freehand": "Desenhe livremente",
+        "line": "Desenhe uma linha reta",
+        "circle": "Crie um círculo perfeito",
+        "rectangle": "Desenhe um retângulo ou quadrado",
+        "polygon": "Crie um polígono regular"
+      },
+      "polygonEdges": "Número de lados: {count}"
+    },
+    "buttons": {
+      "findInscribed": "Encontrar Quadrado Inscrito",
+      "findExtended": "Encontrar Quadrado Estendido",
+      "clear": "Limpar"
+    },
+    "labels": {
+      "showGrid": "Mostrar Grade"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Desenvolvedor Web",
+      "location": "México"
+    },
+    "footer": {
+      "title": "Sobre Este Projeto",
+      "content": "Uma ferramenta interativa que combina geometria e criatividade.",
+      "techStack": "Construído com matemática avançada e tecnologia web",
+      "creator": "Criado por Luis, desenvolvedor web do México",
+      "sourceCode": "Ver código-fonte"
+    }
+  },
+  "mathData": {
+    "title": "Dados Matemáticos",
+    "curveLength": "Comprimento da Curva",
+    "curveArea": "Área da Curva",
+    "centroid": "Centróide",
+    "boundingBox": "Caixa Delimitadora",
+    "min": "Mín",
+    "max": "Máx",
+    "noData": "Nenhum dado de curva disponível",
+    "squareType": "Tipo de Quadrado",
+    "inscribed": "Inscrito",
+    "extended": "Estendido",
+    "squareArea": "Área do Quadrado",
+    "formula": {
+      "title": "Fórmula de Cálculo de Área",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "Onde (xi, yi) são as coordenadas do i-ésimo vértice"
+    }
+  },
+  "about": {
+    "title": "Sobre o Localizador de Quadrados Inscritos",
+    "introduction": {
+      "title": "Introdução",
+      "paragraph1": "Bem-vindo ao Localizador de Quadrados Inscritos, uma ferramenta interativa que explora o fascinante mundo da geometria e das conjecturas matemáticas.",
+      "paragraph2": "Esta aplicação permite que você desenhe curvas fechadas e descubra quadrados inscritos dentro delas, dando vida a um problema matemático centenário."
+    },
+    "keyConcepts": {
+      "title": "Conceitos-Chave",
+      "closedCurves": {
+        "title": "Curvas Fechadas",
+        "description": "Uma curva fechada é um loop contínuo em um plano, como um círculo ou qualquer forma que termina onde começa."
+      },
+      "inscribedSquares": {
+        "title": "Quadrados Inscritos",
+        "description": "Um quadrado inscrito é um quadrado que se encaixa perfeitamente dentro de uma curva fechada, com todos os quatro cantos tocando a curva."
+      },
+      "extendedSquares": {
+        "title": "Quadrados Estendidos",
+        "description": "Um quadrado estendido é o menor quadrado que engloba completamente a curva fechada."
+      },
+      "areaCalculation": {
+        "title": "Cálculo de Área",
+        "description": "A área da curva e dos quadrados é calculada usando algoritmos geométricos avançados."
+      },
+      "curveLength": {
+        "title": "Comprimento da Curva",
+        "description": "A distância total ao redor da curva, medida em kilopixels."
+      }
+    },
+    "mathFoundations": {
+      "title": "Fundamentos Matemáticos",
+      "shoelace": {
+        "title": "Fórmula do Cadarço",
+        "description": "Usamos a fórmula do cadarço (também conhecida como fórmula do agrimensor) para calcular a área do polígono formado pela curva:",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Onde (xi, yi) são as coordenadas do i-ésimo vértice do polígono."
+      },
+      "algorithm": {
+        "title": "Implementação do Algoritmo",
+        "description": "Aqui está uma versão simplificada dos algoritmos usados para encontrar quadrados inscritos e estendidos:",
+        "inscribedSquare": "Encontrando o Quadrado Inscrito",
+        "inscribedCode": "function encontrarQuadradoInscrito(curva) {\n  let melhorQuadrado = [];\n  let tamanhoMaximo = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const centro = obterPontoAleatorioInterno(curva);\n    const quadrado = encontrarMaiorQuadradoNoPonto(centro, curva);\n    if (quadrado.tamanho > tamanhoMaximo) {\n      tamanhoMaximo = quadrado.tamanho;\n      melhorQuadrado = quadrado.pontos;\n    }\n  }\n\n  return melhorQuadrado;\n}",
+        "inscribedExplanation": "Este algoritmo usa uma abordagem de Monte Carlo, tentando pontos aleatórios dentro da curva para encontrar o maior quadrado inscrito.",
+        "extendedSquare": "Encontrando o Quadrado Estendido",
+        "extendedCode": "function encontrarQuadradoEstendido(curva) {\n  const minX = Math.min(...curva.map(p => p.x));\n  const maxX = Math.max(...curva.map(p => p.x));\n  const minY = Math.min(...curva.map(p => p.y));\n  const maxY = Math.max(...curva.map(p => p.y));\n\n  const centroX = (minX + maxX) / 2;\n  const centroY = (minY + maxY) / 2;\n  const tamanho = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centroX - tamanho / 2, y: centroY - tamanho / 2 },\n    { x: centroX + tamanho / 2, y: centroY - tamanho / 2 },\n    { x: centroX + tamanho / 2, y: centroY + tamanho / 2 },\n    { x: centroX - tamanho / 2, y: centroY + tamanho / 2 },\n  ];\n}",
+        "extendedExplanation": "Este algoritmo encontra a caixa delimitadora da curva e cria um quadrado que a engloba completamente."
+      }
+    },
+    "howToUse": {
+      "title": "Como Usar",
+      "steps": {
+        "step1": "Selecione uma ferramenta de desenho da barra de ferramentas.",
+        "step2": "Desenhe uma curva fechada na tela.",
+        "step3": "Clique em 'Encontrar Quadrado Inscrito' para localizar um quadrado inscrito.",
+        "step4": "Clique em 'Encontrar Quadrado Estendido' para encontrar o quadrado envolvente.",
+        "step5": "Veja os dados matemáticos da sua curva e quadrados.",
+        "step6": "Use o botão 'Limpar' para começar de novo com uma nova curva.",
+        "step7": "Experimente com diferentes formas e compare os resultados!"
+      }
+    },
+    "furtherExploration": {
+      "title": "Exploração Adicional",
+      "description": "O problema do quadrado inscrito abre muitos caminhos para exploração matemática:",
+      "topics": {
+        "circles": "Investigue com que frequência curvas perfeitamente circulares produzem quadrados inscritos.",
+        "algorithms": "Explore diferentes algoritmos para encontrar quadrados inscritos de forma mais eficiente.",
+        "relationships": "Estude a relação entre a área da curva e seu quadrado inscrito.",
+        "3d": "Considere como este problema poderia se estender para três dimensões com cubos inscritos."
+      }
+    },
+    "conclusion": "Boa exploração, e que sua curiosidade matemática nunca cesse!"
+  },
+  "footer": {
+    "title": "Sobre Este Projeto",
+    "content": "Uma ferramenta interativa que combina geometria e criatividade.",
+    "techStack": "Construído com matemática avançada e tecnologia web",
+    "creator": "Criado por Luis, desenvolvedor web do México",
+    "sourceCode": "Ver código-fonte"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Localizador Avançado de Quadrados Inscritos"
+  }
+}
+

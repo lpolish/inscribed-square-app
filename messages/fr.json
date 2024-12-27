@@ -1,0 +1,161 @@
+{
+  "Metadata": {
+    "title": "Détecteur Avancé de Carrés Inscrits",
+    "description": "Un outil géométrique interactif pour explorer les carrés inscrits dans des courbes fermées"
+  },
+  "HomePage": {
+    "title": "Détecteur Avancé de Carrés Inscrits",
+    "description": "Explorez le monde fascinant des carrés inscrits dans des courbes fermées",
+    "tools": {
+      "title": "Outils de Dessin",
+      "freehand": "Main levée",
+      "line": "Ligne",
+      "circle": "Cercle",
+      "rectangle": "Rectangle",
+      "polygon": "Polygone",
+      "triangle": "Triangle",
+      "square": "Carré",
+      "pentagon": "Pentagone",
+      "hexagon": "Hexagone",
+      "heptagon": "Heptagone",
+      "octagon": "Octogone",
+      "nonagon": "Nonagone",
+      "decagon": "Décagone",
+      "descriptions": {
+        "freehand": "Dessiner librement",
+        "line": "Tracer une ligne droite",
+        "circle": "Créer un cercle parfait",
+        "rectangle": "Dessiner un rectangle ou un carré",
+        "polygon": "Créer un polygone régulier"
+      },
+      "polygonEdges": "Nombre de côtés : {count}"
+    },
+    "buttons": {
+      "findInscribed": "Trouver le Carré Inscrit",
+      "findExtended": "Trouver le Carré Étendu",
+      "clear": "Effacer"
+    },
+    "labels": {
+      "showGrid": "Afficher la Grille"
+    },
+    "creator": {
+      "name": "Luis",
+      "role": "Développeur Web",
+      "location": "Mexique"
+    },
+    "footer": {
+      "title": "À Propos de ce Projet",
+      "content": "Un outil interactif combinant géométrie et créativité.",
+      "techStack": "Construit avec des mathématiques avancées et des technologies web",
+      "creator": "Créé par Luis, développeur web du Mexique",
+      "sourceCode": "Voir le code source"
+    }
+  },
+  "mathData": {
+    "title": "Données Mathématiques",
+    "curveLength": "Longueur de la Courbe",
+    "curveArea": "Aire de la Courbe",
+    "centroid": "Centroïde",
+    "boundingBox": "Boîte Englobante",
+    "min": "Min",
+    "max": "Max",
+    "noData": "Aucune donnée de courbe disponible",
+    "squareType": "Type de Carré",
+    "inscribed": "Inscrit",
+    "extended": "Étendu",
+    "squareArea": "Aire du Carré",
+    "formula": {
+      "title": "Formule de Calcul d'Aire",
+      "latex": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+      "explanation": "Où (xi, yi) sont les coordonnées du i-ème sommet"
+    }
+  },
+  "about": {
+    "title": "À Propos du Détecteur de Carrés Inscrits",
+    "introduction": {
+      "title": "Introduction",
+      "paragraph1": "Bienvenue sur le Détecteur de Carrés Inscrits, un outil interactif qui explore le monde fascinant de la géométrie et des conjectures mathématiques.",
+      "paragraph2": "Cette application vous permet de dessiner des courbes fermées et de découvrir des carrés inscrits en leur sein, donnant vie à un problème mathématique vieux d'un siècle."
+    },
+    "keyConcepts": {
+      "title": "Concepts Clés",
+      "closedCurves": {
+        "title": "Courbes Fermées",
+        "description": "Une courbe fermée est une boucle continue dans un plan, comme un cercle ou toute forme qui se termine là où elle commence."
+      },
+      "inscribedSquares": {
+        "title": "Carrés Inscrits",
+        "description": "Un carré inscrit est un carré qui s'adapte parfaitement à l'intérieur d'une courbe fermée, avec ses quatre coins touchant la courbe."
+      },
+      "extendedSquares": {
+        "title": "Carrés Étendus",
+        "description": "Un carré étendu est le plus petit carré qui englobe complètement la courbe fermée."
+      },
+      "areaCalculation": {
+        "title": "Calcul d'Aire",
+        "description": "L'aire de la courbe et des carrés est calculée à l'aide d'algorithmes géométriques avancés."
+      },
+      "curveLength": {
+        "title": "Longueur de la Courbe",
+        "description": "La distance totale autour de la courbe, mesurée en kilopixels."
+      }
+    },
+    "mathFoundations": {
+      "title": "Fondements Mathématiques",
+      "shoelace": {
+        "title": "Formule du Lacet",
+        "description": "Nous utilisons la formule du lacet (aussi connue sous le nom de formule de l'arpenteur) pour calculer l'aire du polygone formé par la courbe :",
+        "formula": "A = \\frac{1}{2}\\left|\\sum_{i=1}^{n-1} (x_i y_{i+1} + x_n y_1) - \\sum_{i=1}^{n-1} (x_{i+1} y_i + x_1 y_n)\\right|",
+        "explanation": "Où (xi, yi) sont les coordonnées du i-ème sommet du polygone."
+      },
+      "algorithm": {
+        "title": "Implémentation de l'Algorithme",
+        "description": "Voici une version simplifiée des algorithmes utilisés pour trouver les carrés inscrits et étendus :",
+        "inscribedSquare": "Trouver le Carré Inscrit",
+        "inscribedCode": "function trouverCarreInscrit(courbe) {\n  let meilleurCarre = [];\n  let tailleMax = 0;\n\n  for (let i = 0; i < 1000; i++) {\n    const centre = obtenirPointAleatoireInterieur(courbe);\n    const carre = trouverPlusGrandCarreAuPoint(centre, courbe);\n    if (carre.taille > tailleMax) {\n      tailleMax = carre.taille;\n      meilleurCarre = carre.points;\n    }\n  }\n\n  return meilleurCarre;\n}",
+        "inscribedExplanation": "Cet algorithme utilise une approche de Monte Carlo, essayant des points aléatoires à l'intérieur de la courbe pour trouver le plus grand carré inscrit.",
+        "extendedSquare": "Trouver le Carré Étendu",
+        "extendedCode": "function trouverCarreEtendu(courbe) {\n  const minX = Math.min(...courbe.map(p => p.x));\n  const maxX = Math.max(...courbe.map(p => p.x));\n  const minY = Math.min(...courbe.map(p => p.y));\n  const maxY = Math.max(...courbe.map(p => p.y));\n\n  const centreX = (minX + maxX) / 2;\n  const centreY = (minY + maxY) / 2;\n  const taille = Math.max(maxX - minX, maxY - minY);\n\n  return [\n    { x: centreX - taille / 2, y: centreY - taille / 2 },\n    { x: centreX + taille / 2, y: centreY - taille / 2 },\n    { x: centreX + taille / 2, y: centreY + taille / 2 },\n    { x: centreX - taille / 2, y: centreY + taille / 2 },\n  ];\n}",
+        "extendedExplanation": "Cet algorithme trouve la boîte englobante de la courbe et crée un carré qui l'englobe entièrement."
+      }
+    },
+    "howToUse": {
+      "title": "Comment Utiliser",
+      "steps": {
+        "step1": "Sélectionnez un outil de dessin dans la barre d'outils.",
+        "step2": "Dessinez une courbe fermée sur le canevas.",
+        "step3": "Cliquez sur 'Trouver le Carré Inscrit' pour localiser un carré inscrit.",
+        "step4": "Cliquez sur 'Trouver le Carré Étendu' pour trouver le carré englobant.",
+        "step5": "Visualisez les données mathématiques de votre courbe et des carrés.",
+        "step6": "Utilisez le bouton 'Effacer' pour recommencer avec une nouvelle courbe.",
+        "step7": "Expérimentez avec différentes formes et comparez les résultats !"
+      }
+    },
+    "furtherExploration": {
+      "title": "Exploration Approfondie",
+      "description": "Le problème du carré inscrit ouvre de nombreuses voies pour l'exploration mathématique :",
+      "topics": {
+        "circles": "Étudiez la fréquence à laquelle les courbes parfaitement circulaires produisent des carrés inscrits.",
+        "algorithms": "Explorez différents algorithmes pour trouver des carrés inscrits plus efficacement.",
+        "relationships": "Étudiez la relation entre l'aire de la courbe et son carré inscrit.",
+        "3d": "Considérez comment ce problème pourrait s'étendre à trois dimensions avec des cubes inscrits."
+      }
+    },
+    "conclusion": "Bonne exploration, et que votre curiosité mathématique ne cesse jamais !"
+  },
+  "footer": {
+    "title": "À Propos de ce Projet",
+    "content": "Un outil interactif combinant géométrie et créativité.",
+    "techStack": "Construit avec des mathématiques avancées et des technologies web",
+    "creator": "Créé par Luis, développeur web du Mexique",
+    "sourceCode": "Voir le code source"
+  },
+  "units": {
+    "kilopixels": "kpx",
+    "squareKilopixels": "kpx²"
+  },
+  "header": {
+    "title": "Détecteur Avancé de Carrés Inscrits"
+  }
+}
+

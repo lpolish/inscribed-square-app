@@ -20,16 +20,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
         url: '/favicon.ico',
       },
     ],
-    openGraph: {
-      images: [
-        {
-          url: "/ogg.png",
-          width: 800,
-          height: 600,
-          alt: "Enhanced Inscribed Square Finder"
-        }
-      ]
-    }
+    manifest: '/manifest.json',
   }
 }
 

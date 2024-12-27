@@ -151,7 +151,7 @@ export default function HomePage() {
         <section className="mt-12 text-center">
           <p className="text-lg">{t('footer.creator')}</p>
           <Link 
-            href="https://github.com/example/square-finder" 
+            href="https://github.com/lpolish/inscribed-square-app" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-primary hover:underline"

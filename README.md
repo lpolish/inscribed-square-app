@@ -36,7 +36,7 @@ The Inscribed Square Finder is an interactive web application that allows users 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/lpolish/inscribed-square-app
+git clone https://github.com/lpolish/inscribed-square-app.git
 cd inscribed-square-finder
 ```
 

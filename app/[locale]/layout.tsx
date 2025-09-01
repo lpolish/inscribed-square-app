@@ -1,12 +1,9 @@
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getTranslator } from 'next-intl/server'
 import { ThemeProvider } from "@/components/theme-provider"
 import "../globals.css"
 import LocaleValidator from "@/components/LocalValidator"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslator(params.locale, 'Metadata')
@@ -39,7 +36,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body>
         <LocaleValidator locale={locale}>
           <NextIntlClientProvider messages={messages} locale={locale}>
             <ThemeProvider

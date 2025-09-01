@@ -185,7 +185,7 @@ export default function HomePage() {
                   disabled={curve.length === 0 || isSearching}
                   variant="default"
                 >
-                  {isSearching ? 'Searching...' : 'Find True Inscribed Square'}
+                  {isSearching ? t('buttons.searching') : t('buttons.findTrueInscribed')}
                 </Button>
                 <Button onClick={handleFindExtendedSquare} disabled={curve.length === 0}>
                   {t('buttons.findExtended')}
@@ -209,7 +209,7 @@ export default function HomePage() {
                     checked={allowRotation}
                     onCheckedChange={setAllowRotation}
                   />
-                  <label htmlFor="allow-rotation" className="text-sm font-medium">Allow Rotation</label>
+                  <label htmlFor="allow-rotation" className="text-sm font-medium">{t('labels.allowRotation')}</label>
                 </div>
                 
                 <div className="flex items-center space-x-2">
@@ -218,7 +218,7 @@ export default function HomePage() {
                     checked={isProgressive}
                     onCheckedChange={setIsProgressive}
                   />
-                  <label htmlFor="progressive" className="text-sm font-medium">Progressive Search</label>
+                  <label htmlFor="progressive" className="text-sm font-medium">{t('labels.progressiveSearch')}</label>
                 </div>
               </div>
               

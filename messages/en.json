@@ -32,11 +32,15 @@
     },
     "buttons": {
       "findInscribed": "Find Inscribed Square",
+      "findTrueInscribed": "Find True Inscribed Square",
       "findExtended": "Find Extended Square",
-      "clear": "Clear"
+      "clear": "Clear",
+      "searching": "Searching..."
     },
     "labels": {
-      "showGrid": "Show Grid"
+      "showGrid": "Show Grid",
+      "allowRotation": "Allow Rotation",
+      "progressiveSearch": "Progressive Search"
     },
     "creator": {
       "name": "Luis",

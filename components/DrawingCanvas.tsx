@@ -67,11 +67,56 @@ const DrawingCanvas = forwardRef<HTMLCanvasElement, DrawingCanvasProps>(
             ctx.lineTo(point.x, point.y)
           })
           ctx.closePath()
-          ctx.strokeStyle = square.type === 'inscribed' 
-            ? 'hsl(142, 76%, 36%)'  // Green color for inscribed square
-            : (isDarkMode ? 'hsl(0, 84%, 60%)' : 'hsl(0, 84.2%, 60.2%)')
+          
+          // Set color based on square type
+          let strokeColor: string
+          let label: string
+          switch (square.type) {
+            case 'true-inscribed':
+              strokeColor = 'hsl(0, 100%, 50%)'  // Red for true inscribed
+              label = 'True Inscribed'
+              break
+            case 'max-inscribed':
+            case 'inscribed':
+              strokeColor = 'hsl(142, 76%, 36%)'  // Green for max inscribed
+              label = 'Max Inner'
+              break
+            case 'extended':
+              strokeColor = isDarkMode ? 'hsl(0, 84%, 60%)' : 'hsl(0, 84.2%, 60.2%)'
+              label = 'Extended'
+              break
+            default:
+              strokeColor = 'hsl(142, 76%, 36%)'
+              label = 'Square'
+          }
+          
+          ctx.strokeStyle = strokeColor
           ctx.lineWidth = 2
           ctx.stroke()
+          
+          // Draw vertices as small circles for true inscribed squares
+          if (square.type === 'true-inscribed') {
+            ctx.fillStyle = strokeColor
+            square.points.forEach((point) => {
+              ctx.beginPath()
+              ctx.arc(point.x, point.y, 3, 0, 2 * Math.PI)
+              ctx.fill()
+            })
+          }
+          
+          // Draw label
+          if (square.center) {
+            ctx.fillStyle = isDarkMode ? 'hsl(0, 0%, 90%)' : 'hsl(222.2, 84%, 4.9%)'
+            ctx.font = '12px Inter'
+            ctx.textAlign = 'center'
+            ctx.fillText(label, square.center.x, square.center.y - 10)
+            
+            // Show rotation angle if applicable
+            if (square.rotation && Math.abs(square.rotation) > 0.01) {
+              const angleDegrees = Math.round((square.rotation * 180) / Math.PI)
+              ctx.fillText(`${angleDegrees}°`, square.center.x, square.center.y + 15)
+            }
+          }
         }
 
         // Draw hover guidance

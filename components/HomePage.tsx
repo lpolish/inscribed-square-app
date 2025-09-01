@@ -7,7 +7,7 @@ import { Switch } from '@/components/ui/switch'
 import DrawingCanvas from '@/components/DrawingCanvas'
 import MathData from '@/components/MathData'
 import GeometricalTools from '@/components/GeometricalTools'
-import { findInscribedSquare, findExtendedSquare } from '@/lib/squareFinder'
+import { findInscribedSquare, findExtendedSquare, findTrueInscribedSquare, findTrueInscribedSquareProgressive } from '@/lib/squareFinder'
 import { Point, Square, CurveData } from '@/types'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -22,6 +22,10 @@ export default function HomePage() {
   const [curveData, setCurveData] = useState<CurveData | null>(null)
   const [selectedTool, setSelectedTool] = useState<string>('freehand')
   const [polygonEdges, setPolygonEdges] = useState(6)
+  const [allowRotation, setAllowRotation] = useState(false)
+  const [isProgressive, setIsProgressive] = useState(false)
+  const [progressiveStatus, setProgressiveStatus] = useState<string>('')
+  const [isSearching, setIsSearching] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const handleDrawingComplete = (points: Point[]) => {
@@ -35,9 +39,68 @@ export default function HomePage() {
     })
   }
 
-  const handleFindInscribedSquare = () => {
+  const handleFindMaxInscribedSquare = () => {
     const inscribedSquare = findInscribedSquare(curve)
-    setSquare({ points: inscribedSquare, type: 'inscribed' })
+    setSquare({ points: inscribedSquare, type: 'max-inscribed' })
+  }
+
+  const handleFindInscribedSquare = () => {
+    // Backward compatibility - use max inscribed
+    handleFindMaxInscribedSquare()
+  }
+
+  const handleFindTrueInscribedSquare = async () => {
+    setIsSearching(true)
+    setProgressiveStatus('')
+    
+    try {
+      if (isProgressive) {
+        const result = await findTrueInscribedSquareProgressive(
+          curve, 
+          allowRotation,
+          (bestSquare, iteration) => {
+            setProgressiveStatus(`Searching... iteration ${iteration}`)
+            if (bestSquare) {
+              setSquare({ 
+                points: bestSquare.points, 
+                type: 'true-inscribed',
+                rotation: bestSquare.rotation,
+                center: bestSquare.center,
+                size: bestSquare.size
+              })
+            }
+          }
+        )
+        
+        if (result) {
+          setSquare({ 
+            points: result.points, 
+            type: 'true-inscribed',
+            rotation: result.rotation,
+            center: result.center,
+            size: result.size
+          })
+          setProgressiveStatus('Search completed!')
+        } else {
+          setProgressiveStatus('No inscribed square found')
+        }
+      } else {
+        const result = findTrueInscribedSquare(curve, allowRotation)
+        if (result) {
+          setSquare({ 
+            points: result.points, 
+            type: 'true-inscribed',
+            rotation: result.rotation,
+            center: result.center,
+            size: result.size
+          })
+        } else {
+          setProgressiveStatus('No inscribed square found')
+        }
+      }
+    } finally {
+      setIsSearching(false)
+    }
   }
 
   const handleFindExtendedSquare = () => {
@@ -112,22 +175,58 @@ export default function HomePage() {
               selectedTool={selectedTool}
               polygonEdges={polygonEdges}
             />
-            <div className="flex flex-wrap gap-4">
-              <Button onClick={handleFindInscribedSquare} disabled={curve.length === 0}>
-                {t('buttons.findInscribed')}
-              </Button>
-              <Button onClick={handleFindExtendedSquare} disabled={curve.length === 0}>
-                {t('buttons.findExtended')}
-              </Button>
-              <Button onClick={handleClear} variant="outline">{t('buttons.clear')}</Button>
-              <div className="flex items-center space-x-2">
-                <Switch
-                  id="show-grid"
-                  checked={showGrid}
-                  onCheckedChange={setShowGrid}
-                />
-                <label htmlFor="show-grid" className="text-sm font-medium">{t('labels.showGrid')}</label>
+            <div className="space-y-4">
+              <div className="flex flex-wrap gap-4">
+                <Button onClick={handleFindInscribedSquare} disabled={curve.length === 0}>
+                  Find Max Inner Square
+                </Button>
+                <Button 
+                  onClick={handleFindTrueInscribedSquare} 
+                  disabled={curve.length === 0 || isSearching}
+                  variant="default"
+                >
+                  {isSearching ? t('buttons.searching') : t('buttons.findTrueInscribed')}
+                </Button>
+                <Button onClick={handleFindExtendedSquare} disabled={curve.length === 0}>
+                  {t('buttons.findExtended')}
+                </Button>
+                <Button onClick={handleClear} variant="outline">{t('buttons.clear')}</Button>
               </div>
+              
+              <div className="flex flex-wrap gap-4 items-center">
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id="show-grid"
+                    checked={showGrid}
+                    onCheckedChange={setShowGrid}
+                  />
+                  <label htmlFor="show-grid" className="text-sm font-medium">{t('labels.showGrid')}</label>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id="allow-rotation"
+                    checked={allowRotation}
+                    onCheckedChange={setAllowRotation}
+                  />
+                  <label htmlFor="allow-rotation" className="text-sm font-medium">{t('labels.allowRotation')}</label>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id="progressive"
+                    checked={isProgressive}
+                    onCheckedChange={setIsProgressive}
+                  />
+                  <label htmlFor="progressive" className="text-sm font-medium">{t('labels.progressiveSearch')}</label>
+                </div>
+              </div>
+              
+              {progressiveStatus && (
+                <div className="text-sm text-muted-foreground">
+                  {progressiveStatus}
+                </div>
+              )}
             </div>
           </div>
           <div className="space-y-6">
